@@ -24,6 +24,10 @@ Route::prefix('amit')->group(function(){
 Route::get('/ram',[Frontendcontroller::class,'index'])->name('ram');
 Route::get('/contatc',[Frontendcontroller::class,'contact'])->name('contact');
 Route::post('/contact',[Frontendcontroller::class,'post'])->name('post');
+Route::get('/contact-list',[Frontendcontroller::class,'contactList'])->name('contact.list');
+Route::get('/contact/edit/{id}',[Frontendcontroller::class,'edit'])->name('contact.edit');
+Route::post('/contact/edit/{id}',[Frontendcontroller::class,'update'])->name('contact.update');
+Route::get('/contact/delete/{id}',[Frontendcontroller::class,'delete'])->name('contact.delete');
 
 Route::get('/about',[Frontendcontroller::class,'about'])->name('about');
 // Route::post('/about',[Frontendcontroller::class,'post'])->name('post');
