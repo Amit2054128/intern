@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Frontendcontroller;
+use App\Http\Controllers\StaffController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -30,5 +31,6 @@ Route::post('/contact/edit/{id}',[Frontendcontroller::class,'update'])->name('co
 Route::get('/contact/delete/{id}',[Frontendcontroller::class,'delete'])->name('contact.delete');
 
 Route::get('/about',[Frontendcontroller::class,'about'])->name('about');
+Route::resource('/staff',StaffController::class)->name('any','staff');
 // Route::post('/about',[Frontendcontroller::class,'post'])->name('post');
 });
