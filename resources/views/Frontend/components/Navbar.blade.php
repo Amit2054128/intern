@@ -35,6 +35,27 @@
           <li class="nav-item">
             <a class="nav-link disabled">Disabled</a>
           </li>
+          <li class="nav-item">
+            @if(Auth::user())
+            <form method="POST" action="{{ route('logout') }}">
+              @csrf
+
+              <x-dropdown-link :href="route('logout')"
+                      onclick="event.preventDefault();
+                                  this.closest('form').submit();">
+                  {{ __('Log Out') }}
+              </x-dropdown-link>
+          </form>
+
+            @else
+            <a class="nav-link" href="{{route('login')}}">login</a>
+
+
+
+
+            @endif
+           
+          </li>
         </ul>
         <form class="d-flex" role="search">
           <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
