@@ -7,6 +7,12 @@ use Illuminate\Http\Request;
 
 class Frontendcontroller extends Controller
 {
+
+    
+public function home(){
+  return view('Frontend.Home');
+}
+
   public function index(){
     return view('Frontend.Home');
   }
