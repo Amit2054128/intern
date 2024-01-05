@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Backend\DashboardController;
+use App\Http\Controllers\Backend\RoleController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Frontendcontroller;
@@ -39,6 +40,9 @@ use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
         Route::middleware(['checkRole'])->group(function(){
             Route::get('/home',[DashboardController::class,'index'])->name('dashboard');
+            Route::get('/user',[RoleController::class,'index'])->name('user');
+            Route::get('/make-user/{id}',[RoleController::class,'makeUser'])->name('make.user');
+            Route::get('/make-admin/{id}',[RoleController::class,'makeAdmin'])->name('make.admin');
         });
     
         
